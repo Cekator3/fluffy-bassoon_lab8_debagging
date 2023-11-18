@@ -14,7 +14,7 @@ class TestSortirovka1(unittest.TestCase):
     def test_sortirovka1(self):
         arr = [1, 3, 2, 4]
         array_sort(arr)
-        self.assertEqual(arr, [1, 2, 3, 4])
+        self.assertEqual(arr, [1, 2, 3, 4, 999999999])
 class TestSortirovka2(unittest.TestCase):
     def test_sortirovka2(self):
         arr = [0, 6, -1, 3, 2, 4]
