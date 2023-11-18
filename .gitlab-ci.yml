@@ -13,6 +13,6 @@ RunningUnitTests:
   image: python:3.12
   script:
     - pip3 install pytest
-    - python3 Test*.py
+    - pytest Test*.py
 
 
