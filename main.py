@@ -13,9 +13,9 @@ def Polindrom(s):
     return s == reversedString
 
 def fac(n):
-    if n <= 0:
+    if n < 0:
         raise Exception("Нету отрицательного факториала")
-    if n == 1:
+    if n <= 1:
         return 1
     return (n * fac(n - 1))
 

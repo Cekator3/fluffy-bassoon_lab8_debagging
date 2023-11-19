@@ -25,17 +25,23 @@ class TestSortirovka2(unittest.TestCase):
 '''2'''
 class TestPolindromTrue(TestCase):
     def test_polindrom(self):
-        self.assertTrue(Polindrom('malayalam'))
+        polindroms = ['malayalam', '121', 'арара']
+        for polindrom in polindroms:
+            self.assertTrue(Polindrom(polindrom))
 
 class TestPolindromFalse(unittest.TestCase):
     def test_polindrom(self):
-        self.assertFalse(Polindrom("python"))
-
+        notPolindroms = ['python', '1212', 'базука']
+        for notPolindrom in notPolindroms:
+            self.assertFalse(Polindrom(notPolindrom))
 
 '''3'''
 class TestFactorial1(unittest.TestCase):
     def test_factorial(self):
-        self.assertEqual(fac(3), 6)
+        inputs = [0, 1, 2, 3, 4]
+        expectedOutputs = [1, 1, 2, 6, 24]
+        for i in range(len(inputs)):
+            self.assertEqual(fac(inputs[i]), expectedOutputs[i])
 
 class TestFactorial2(unittest.TestCase):
     def test_factorial(self):
@@ -45,7 +51,10 @@ class TestFactorial2(unittest.TestCase):
 '''4'''
 class Testfibonacci1(unittest.TestCase):
     def test_fibonacci(self):
-        self.assertEqual(fib(10), 55)
+        inputs = [1, 2, 3, 4]
+        expectedOutputs = [1, 1, 2, 3]
+        for i in range(len(inputs)):
+            self.assertEqual(fib(inputs[i]), expectedOutputs[i])
 
 class Testfibonacci2(unittest.TestCase):
     def test_fibonacci(self):
@@ -54,23 +63,25 @@ class Testfibonacci2(unittest.TestCase):
 
 
 '''5'''
-class Teststepen1(unittest.TestCase):
+class TestStepen(unittest.TestCase):
     def test_stepen(self):
-        self.assertEqual(step(0, 5), 0)
-
-class Teststepen2(unittest.TestCase):
-    def test_stepen(self):
-        a = 4.5
-        b = 1.5
-        self.assertEqual(step(a, b), 9.545941546018392)
+        numbers = [0, 1, 2, 3, 4]
+        degrees = [0, 9, 2, 2, 2]
+        expectedOutputs = [1, 1, 4, 9, 16]
+        for i in range(len(numbers)):
+            self.assertEqual(step(numbers[i], degrees[i]), expectedOutputs[i])
 
 '''6'''
 class TestProstoeTrue(unittest.TestCase):
     def test_prostoe(self):
-        self.assertTrue(prost(5))
+        primeNumbers = [2, 3, 5, 7, 11]
+        for number in primeNumbers:
+            self.assertTrue(prost(number))
 class TestProstoeFalse(unittest.TestCase):
     def test_prostoe(self):
-        self.assertFalse(prost(6))
+        notPrimeNumbers = [4, 6, 9, 8, 12]
+        for number in notPrimeNumbers:
+            self.assertFalse(prost(number))
 
 if __name__ == "__main__":
     unittest.main()
